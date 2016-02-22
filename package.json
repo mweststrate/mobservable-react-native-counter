@@ -1,44 +1,37 @@
 {
-  "name": "mobservCounter",
-  "version": "0.0.1",
-  "private": true,
-  "jest": {
-    "scriptPreprocessor": "./node_modules/babel-jest",
-    "testPathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "testFileExtensions": [
-      "es6",
-      "js"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "es6"
-    ],
-    "verbose": true,
-    "testPathDirs": [
-      "src/"
-    ]
-  },
-  "scripts": {
-    "test": "jest --verbose ",
-    "start": "react-native start",
-    "test:watch": "npm run test -- --watch",
-    "test-chrome": "node-debug --preload false --nodejs --harmony jest --runInBand"
-  },  
-  "scripts": {
-    "start": "react-native start"
-  },
-  "dependencies": {
-    "mobservable": "^1.2.4",
-    "mobservable-react": "^2.1.4",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "react-native": "^0.19.0"
-  },
-    "devDependencies": {
-    "babel-jest": "^6.0.1",
-    "jest-cli": "^0.8.2"
-  }
+	"name": "mobservCounter",
+	"version": "0.0.1",
+	"private": true,
+	"jest": {
+		"scriptPreprocessor": "<rootDir>/node_modules/react-native/jestSupport/preprocessor.js",
+		"setupEnvScriptFile": "<rootDir>/node_modules/react-native/jestSupport/env.js",
+		"unmockedModulePathPatterns": [
+			"<rootDir>/node_modules/react",
+			"<rootDir>/node_modules/react-native",
+			"<rootDir>/node_modules/react-dom",
+			"<rootDir>/node_modules/react-addons-test-utils",
+			"<rootDir>/node_modules/fbjs",
+			"<rootDir>/node_modules/mobservable",
+			"<rootDir>/node_modules/mobservable-react",
+			"<rootDir>/node_modules/mobservable-react/native.js"
+		]
+	},
+	"scripts": {
+		"test": "BABEL_JEST_STAGE=0 jest --verbose ",
+		"start": "react-native start",
+		"test:watch": "npm run test -- --watch",
+		"test-chrome": "node-debug --preload false --nodejs --harmony jest --runInBand"
+	},
+	"dependencies": {
+		"mobservable": "^1.2.4",
+		"mobservable-react": "^2.1.4",
+		"react": "^0.14.7",
+		"react-dom": "^0.14.7",
+		"react-native": "^0.19.0"
+	},
+	"devDependencies": {
+		"babel-jest": "^6.0.1",
+		"jest-cli": "^0.8.2",
+		"react-addons-test-utils": "~0.14.0"
+	}
 }
